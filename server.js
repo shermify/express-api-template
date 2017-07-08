@@ -9,9 +9,13 @@ const app = express();
 app.use(morgan('dev'));
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/test', (err) => {
-  if (err) { console.log('error', err); } else { console.log('debug', 'Mongoose connected'); }
-});
+mongoose.connect('mongodb://localhost/test',
+  {
+    useMongoClient: true,
+  },
+  (err) => {
+    if (err) { console.log('error', err); } else { console.log('Mongoose connected'); }
+  });
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
