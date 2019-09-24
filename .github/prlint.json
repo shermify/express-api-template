@@ -1,0 +1,8 @@
+{
+  "title": [
+    {
+      "pattern": "^\[LIMS-[0-9]+\]\[(build|docs|feat|fix|perf|refactor|test|chore)\]\s.+",
+      "message": "Your title needs to be in the format `[LIMS-1234][type] Stuff you did`"
+    }
+  ]
+}
